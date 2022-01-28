@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+@use 'page/nav';
+@use 'page/toppage';
+@use 'page/about';
+@use 'page/contact';
+
+@use 'setting/color';
+@use 'setting/font';
+@use 'setting/mixin';
+
+
+
+//Mixin
+@mixin backgroundImage($url){
+  background-image: $url;
+  background-repeat: none;
+  background-size: cover;
+}
+
+
+.\? {
+  box-shadow: inset 4px 4px rgb(236, 15, 170), inset -4px -4px rgb(236, 15, 170);
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+.app-con{
+  height: 100vh;
+  @include backgroundImage(url('../image/background-top.jpg'));
+}
