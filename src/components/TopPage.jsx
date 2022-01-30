@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { TopPageLeft } from './TopPageLeft';
+import { TopPageProjectList } from './TopPageProjectList';
 
 export const TopPage = () => {
 
@@ -23,7 +23,7 @@ export const TopPage = () => {
     <div className='top-con'>
         <div className="top-con-left">
             <div className="top-con-left-con ?">
-                      containor  
+                <img src='https://images.unsplash.com/photo-1519222970733-f546218fa6d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' alt='webapp-1' />
             </div>
             <div className="top-con-left-disc" >
                         
@@ -53,7 +53,7 @@ export const TopPage = () => {
                 {projects.map(project => {
                     return(
                         // <li key={project.id} onMouseEnter={showSelectedProject(project.id)}>{project.title}</li>
-                        <TopPageLeft key={project.id} project={project} onHover={showSelectedProject}/>
+                        <TopPageProjectList key={project.id} project={project} onHover={showSelectedProject}/>
 
                     )
                 })}
