@@ -1,5 +1,11 @@
 @use '../setting/color' as *;
 
+@mixin backgroundImage($url){
+    background-image: $url;
+    background-repeat: none;
+    background-size: cover;
+}
+
 @mixin alignFlexCenter {
     display: flex;
     flex-direction: row;

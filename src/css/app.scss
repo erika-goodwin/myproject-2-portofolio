@@ -7,16 +7,11 @@
 
 @use 'setting/color';
 @use 'setting/font';
-@use 'setting/mixin';
-
+@use 'setting/mixin' as *;
 
 
 //Mixin
-@mixin backgroundImage($url){
-  background-image: $url;
-  background-repeat: none;
-  background-size: cover;
-}
+
 
 
 .\? {

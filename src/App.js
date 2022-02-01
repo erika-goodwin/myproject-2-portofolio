@@ -9,6 +9,9 @@ import { About } from './components/About';
 import ContactMe from './components/ContactMe';
 
 export default function App() {
+
+  // const styleBackPic = `app-con-background-${}`
+
   return (
     <>
       <div className='app-con'>
