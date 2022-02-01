@@ -33,5 +33,15 @@ html,body{
 
 .app-con{
   height: 100vh;
+
+}
+
+.app-con-background-home{
   @include backgroundImage(url('../image/background-top.jpg'));
+}
+.app-con-background-about{
+  @include backgroundImage(url('../image/background-about.jpg'));
+}
+.app-con-background-contact{
+  @include backgroundImage(url('../image/background-contact.jpg'));
 }
