@@ -2,22 +2,17 @@
 
 @use 'page/nav';
 @use 'page/toppage';
+@use 'page/projectpage';
 @use 'page/about';
 @use 'page/contact';
 
-@use 'setting/color';
-@use 'setting/font';
+@use 'setting/color' as *;
+@use 'setting/font' as *;
 @use 'setting/mixin' as *;
-
-
-//Mixin
-
-
 
 .\? {
   box-shadow: inset 4px 4px rgb(236, 15, 170), inset -4px -4px rgb(236, 15, 170);
 }
-
 
 /* Box sizing rules */
 *,
@@ -29,15 +24,15 @@
 html,body{
   margin: 0;
   padding: 0;
+  font-family: $font-sentence;
 }
 
 .app-con{
   height: 100vh;
-
 }
 
-.app-con-background-home{
-  @include backgroundImage(url('../image/background-top.jpg'));
+.app-con-background-project{
+  @include backgroundImage(url('../image/background-project.jpg'));
 }
 .app-con-background-about{
   @include backgroundImage(url('../image/background-about.jpg'));

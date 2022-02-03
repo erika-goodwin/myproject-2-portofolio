@@ -2,11 +2,23 @@
 @use '../setting/font' as *;
 @use '../setting/mixin' as *;
 
-
-
-.nav-con{
+.nav-con-background-main{
+    background-color: $color-main;
+}
+.nav-con-background-second{
+    background-color: $color-second;
+}
+.nav-con-background-third{
     background-color: $color-third;
     opacity: 0.8;
+}
+.nav-con-background-backd{
+    background-color: $color-backd;
+}
+
+.nav-con{
+
+
     color: white;
     height: 8%;
 

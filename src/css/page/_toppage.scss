@@ -5,41 +5,35 @@
 
 .top-con{
     height: 92vh;
-    background-color: rgba(156, 156, 156, 0.7);
+    background-color: $color-main;
     color: white;
-    text-align: center;
+    // text-align: center;
 
     display: flex;
     flex-direction: row;
 
     &-left{
         width: 60%;
-
+        padding: 2rem;
         @include flexColCenter();
         
-        &-con{
-            height: 70%;
-            width: 90%;
-            
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+        &-location{
+            @include alignFlexCenter;
+            margin-bottom: 1rem;
+            ion-icon{
+                font-size: 2.5rem;
             }
-            
-            
-        }
-
-        &-disc{
-            width: 90%;
-            
-            display: flex;
-
-            &-con{
-                width: 50%;
-                height: 2rem;
-                @include alignFlexCenter;
+            h5{
                 padding-left: 1rem;
+            }
+        }
+        &-me{
+
+            h1{
+                font-family: $font-title;
+                margin-bottom: 1.5rem;
+            }
+            h5{
             }
         }
         
@@ -48,51 +42,17 @@
         width: 40%;
 
         @include flexColCenter();
+        align-items: center;
 
-        &-list{
-            margin-right: 30%;
-            text-align: left;
+        &-pic{
+            margin-left: 3rem;
+            background-color: $color-second;
+            width: 20rem;
+            height: 20rem;
 
-            &-each{
-                margin-top: 2rem;
-                width: 100%;
-               
-                a{
-                    text-decoration: none;
-                    color: white;
-                    text-shadow: 0.1rem 0.1rem $color-second;
-                    font-size: 2rem;
-                    height: 2rem;
-                    transition: 0.5s;
-                    position: relative;
-                }
-                a::after{
-                    content: '\00bb';
-                    position: absolute;
-                    opacity: 0;
-                    padding-left: 2rem;
-                    transition: 0.5s;
-                }
-                hr{
-                    width: 30%;
-                    height: 0.2rem;
-                    margin-top: -0.3rem;
-                    transition: 0.5s;
-                }
+            border-radius: 50%;
+            @include alignFlexCenter;
 
-                &:hover{
-                    a::after{
-
-                        opacity: 1;
-
-                    }
-                    hr{
-                        width: 60%;
-                    }
-                }
-
-
-            }
         }
     }
 }

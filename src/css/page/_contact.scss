@@ -1,5 +1,6 @@
 @use '../setting/color' as *;
-
+@use '../setting/font' as *;
+@use '../setting/mixin' as *;
 
 
 .contact-con{
@@ -7,4 +8,35 @@
     margin: 4vh;
     background-color: rgba(255, 255, 255, 0.459);
     color: white;
+    display: flex;
+    
+
+    &-form{
+        width: 65%;
+        height: 100%;
+        background-color: $color-main;
+    }
+
+    &-social{
+        width: 35%;
+        height: 100%;
+
+        
+        h4{
+        }
+        ul{
+            width: 50%;
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            li{
+                list-style-type: none;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }
