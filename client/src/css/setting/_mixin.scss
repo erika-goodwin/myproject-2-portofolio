@@ -1,0 +1,33 @@
+@use '../setting/color' as *;
+
+@mixin backgroundImage($url){
+    background-image: $url;
+    background-repeat: none;
+    background-size: cover;
+    
+}
+
+@mixin alignFlexCenter {
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+}
+
+@mixin linkAndHover {
+    color: white;
+
+    text-decoration: none;
+
+    &:hover{
+        // color: $color-main;
+        transition: .3s all ease-in;
+
+    }
+}
+
+@mixin flexColCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
