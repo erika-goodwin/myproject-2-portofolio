@@ -89,7 +89,6 @@ function ContactMe() {
             <h5>I will get back to you as soon as possible.</h5>
             <h5>Please allow me some time to replay. Have a good day.</h5>
           </div>
-
           <div className="contact-con-social-links">
             <h3> Connect with me on SNS</h3>
             <ul className="">

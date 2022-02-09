@@ -28,12 +28,17 @@
       }
     }
     &-me {
-      h1 {
-        font-family: $font-title;
+      &-active {
+        display: flex;
+        flex: row wrap;
+        justify-content: space-between;
         margin-bottom: 1.5rem;
 
-        spam {
-          margin-left: 2rem;
+        h1 {
+          font-family: $font-title;
+        }
+        h2 {
+          text-align: center;
           padding: 0.3rem 0.5rem;
           font-size: 1.7rem;
           font-family: $font-sentence;
