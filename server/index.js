@@ -14,9 +14,9 @@ const bodyParser = require("body-parser");
 const projectsRoute = require("./routes/projectsRouter");
 
 //Middleware
-app.set("views", __dirname + "/client/src/components");
-app.set("view engine", "jsx");
-app.engine("jsx", require("express-react-views").createEngine());
+// app.set("views", __dirname + "/client/src/components");
+// app.set("view engine", "jsx");
+// app.engine("jsx", require("express-react-views").createEngine());
 
 app.use(cors());
 app.use(express.json());

@@ -19,6 +19,7 @@
     &-comp {
       height: 70%;
       width: 90%;
+      position: relative;
 
       img {
         width: 100%;
@@ -36,6 +37,81 @@
           height: 2rem;
           @include alignFlexCenter;
           padding-left: 1rem;
+        }
+      }
+      &-modal {
+        background-color: $color-backd-8;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 2rem;
+
+        @include flexColCenter;
+        h2 {
+          font-family: $font-title;
+          margin-bottom: 1rem;
+        }
+
+        &-tag {
+          padding: 1rem;
+          ul {
+            width: 100%;
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            li {
+              list-style-type: none;
+              background-color: $color-backl-8;
+              padding: 0.5rem;
+              border-radius: 0.7rem;
+            }
+          }
+        }
+        &-deslink-con {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+
+          &-description {
+            width: 70%;
+          }
+
+          &-link {
+            width: 30%;
+
+            ul {
+              width: 100%;
+
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+
+              li {
+                list-style-type: none;
+                a {
+                  text-decoration: none;
+
+                  .sns-icon {
+                    font-size: 2.5rem;
+                    text-decoration: none;
+                  }
+                  .earth {
+                    color: #72b3d6;
+                  }
+                  .github {
+                    color: #171515;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

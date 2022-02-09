@@ -44,14 +44,12 @@ router.post("/", (req, res) => {
 router.get("/:id", (req, res) => {
   const pickedProjectId = req.params.id;
   console.log("get id get id get id:", pickedProjectId);
-  Project.findById(pickedProjectId).then((project) => {
-    console.log("/picked project: ", project);
-
-    res.render("ProjectPage", {
-      pageTitle: "project",
-      project: project,
-    });
-  });
+  Project.findById(pickedProjectId)
+    .then((project) => {
+      console.log("/picked project: ", project);
+      res.json({ project: project });
+    })
+    .catch((err) => console.log("err: ", err));
 });
 
 module.exports = router;
