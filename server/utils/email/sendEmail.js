@@ -1,3 +1,4 @@
+require("dotenv").config();
 const nodemailer = require("nodemailer");
 
 // const res = require("express/lib/response");
@@ -5,13 +6,15 @@ const nodemailer = require("nodemailer");
 const sendEmail = async (name, email, subject, message) => {
   // create reusable transporter object using the default SMTP transport
 
+  console.log(process.env.EMAIL_USERNAME);
+  console.log(process.env.EMAIL_PASSWORD);
+  console.log(process.env.EMAIL_BCC);
+
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: process.env.EMAIL_PORT,
-      secure: false,
       auth: {
-        type: "login",
         user: process.env.EMAIL_USERNAME,
         pass: process.env.EMAIL_PASSWORD,
       },
@@ -19,8 +22,10 @@ const sendEmail = async (name, email, subject, message) => {
 
     const options = () => {
       return {
-        from: `"${name}"<${email}>`,
+        from: `${email}`,
         to: process.env.EMAIL_USERNAME,
+        cc: process.env.EMAIL_BCC,
+
         subject,
         text: `${message}`,
         html: `
