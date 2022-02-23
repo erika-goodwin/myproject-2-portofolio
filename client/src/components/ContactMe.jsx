@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { BiHomeAlt } from "react-icons/bi";
+import axios from "axios";
 
 function ContactMe() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const resetForm = () => {
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
+  };
+
+  const submitEmail = (e) => {
+    e.preventDefault();
+
+    const mailData = { name, email, subject, message };
+    console.log("email data: ", mailData);
+
+    axios
+      .post("http://localhost:3001/api/contact/send", mailData)
+      .then((res) => {
+        if (res.data.status === "success") {
+          alert("Message Sent!");
+          resetForm();
+        } else if (res.data.status === "fail") {
+          alert("Message failed to send");
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
       <div className="contact-con">
@@ -13,12 +45,13 @@ function ContactMe() {
               method="POST"
               id="contactForm"
               name="contactForm"
+              onSubmit={submitEmail}
               className="contact-con-form-center-contactForm"
             >
               <div className="row">
                 <div className="col-md-6">
                   <div className="form-group">
-                    <label className="label" for="name">
+                    <label className="label" htmlFor="name">
                       Full Name
                     </label>
                     <input
@@ -27,12 +60,15 @@ function ContactMe() {
                       name="name"
                       id="name"
                       placeholder="Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
                     />
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="form-group">
-                    <label className="label" for="email">
+                    <label className="label" htmlFor="email">
                       Email Address
                     </label>
                     <input
@@ -41,12 +77,15 @@ function ContactMe() {
                       name="email"
                       id="email"
                       placeholder="Email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
                 <div className="col-md-12">
                   <div className="form-group">
-                    <label className="label" for="subject">
+                    <label className="label" htmlFor="subject">
                       Subject
                     </label>
                     <input
@@ -55,12 +94,14 @@ function ContactMe() {
                       name="subject"
                       id="subject"
                       placeholder="Subject"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
                     />
                   </div>
                 </div>
                 <div className="col-md-12">
                   <div className="form-group">
-                    <label className="label" for="#">
+                    <label className="label" htmlFor="message">
                       Message
                     </label>
                     <textarea
@@ -70,12 +111,19 @@ function ContactMe() {
                       cols="30"
                       rows="4"
                       placeholder="Message"
+                      required
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                   </div>
                 </div>
                 <div className="col-md-12">
                   <div className="form-group">
-                    <input type="submit" value="Send Message" className="btn btn-submit" />
+                    <input
+                      type="submit"
+                      value="Send Message"
+                      className="btn btn-submit"
+                    />
                     <div className="submitting"></div>
                   </div>
                 </div>

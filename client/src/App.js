@@ -36,14 +36,14 @@ export default function App() {
   const [backgroundClass, setBackgroundClass] = useState();
   let location = useLocation();
 
-  useEffect(() => {
-    fetch("/api")
-    // fetch(process.env.REACT_APP_API_ENDPOINT + "/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/api/projects")
+  //   // fetch(process.env.REACT_APP_API_ENDPOINT + "/api/projects")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.message));
 
-    console.log("data from backend:", data);
-  }, []);
+  //   console.log("data from backend:", data);
+  // }, []);
 
   useEffect(() => {
     setBackgroundClass(backgroundChanger(location));
