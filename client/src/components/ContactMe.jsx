@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { BiHomeAlt } from "react-icons/bi";
+import axios from "axios";
+import { reset } from "nodemon";
 
 function ContactMe() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const resetForm = () => {
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
+  };
+
+  const submitEmail = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("/send", {
+        name,
+        email,
+        subject,
+        message,
+      })
+      .then((res) => {
+        if (res.data.status === "success") {
+          alert("Message Sent!");
+          resetForm();
+        } else if (res.data.status === "fail") {
+          alert("Message failed to send");
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
       <div className="contact-con">
@@ -13,6 +48,7 @@ function ContactMe() {
               method="POST"
               id="contactForm"
               name="contactForm"
+              onSubmit={submitEmail}
               className="contact-con-form-center-contactForm"
             >
               <div className="row">
@@ -27,6 +63,8 @@ function ContactMe() {
                       name="name"
                       id="name"
                       placeholder="Name"
+                      onChange={(e) => setName(e.target.value)}
+                      required
                     />
                   </div>
                 </div>
@@ -41,6 +79,8 @@ function ContactMe() {
                       name="email"
                       id="email"
                       placeholder="Email"
+                      required
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
@@ -55,6 +95,7 @@ function ContactMe() {
                       name="subject"
                       id="subject"
                       placeholder="Subject"
+                      onChange={(e) => setSubject(e.target.value)}
                     />
                   </div>
                 </div>
@@ -70,12 +111,18 @@ function ContactMe() {
                       cols="30"
                       rows="4"
                       placeholder="Message"
+                      required
+                      onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                   </div>
                 </div>
                 <div className="col-md-12">
                   <div className="form-group">
-                    <input type="submit" value="Send Message" className="btn btn-submit" />
+                    <input
+                      type="submit"
+                      value="Send Message"
+                      className="btn btn-submit"
+                    />
                     <div className="submitting"></div>
                   </div>
                 </div>
