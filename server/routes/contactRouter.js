@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
   res.json("Contact Form Get");
 });
 
-router.post("/send", (req, res) => {
+router.post("/send", async(req, res) => {
   console.log("Contact Form POST(send)");
   //   let data = req.body.mailData;
   let { name, email, subject, message } = req.body;
@@ -26,8 +26,14 @@ router.post("/send", (req, res) => {
       .status(400)
       .json({ msg: "The email needs to be at least 5 characters long." });
   }
+  
+  //will return true is mail is sent successfully
+  const mailResult = await sendEmail(name, email, subject, message);
 
-  sendEmail(name, email, subject, message);
+  if(mailResult){
+    return res.status(200).json({ success: true });
+  }
+
 
 });
 

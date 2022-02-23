@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
-import { BiHomeAlt } from "react-icons/bi";
 import axios from "axios";
 
 function ContactMe() {
@@ -8,6 +7,7 @@ function ContactMe() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const resetForm = () => {
     setName("");
@@ -16,13 +16,15 @@ function ContactMe() {
     setMessage("");
   };
 
-  const submitEmail = (e) => {
+  const submitEmail = async (e) => {
     e.preventDefault();
+
+    setIsLoading(true);
 
     const mailData = { name, email, subject, message };
     console.log("email data: ", mailData);
 
-    axios
+    await axios
       .post("http://localhost:3001/api/contact/send", mailData)
       .then((res) => {
         if (res.data.status === "success") {
@@ -32,7 +34,10 @@ function ContactMe() {
           alert("Message failed to send");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -124,7 +129,9 @@ function ContactMe() {
                       value="Send Message"
                       className="btn btn-submit"
                     />
-                    <div className="submitting"></div>
+                    <div className="submitting">
+                      {isLoading && <h4>Sending....</h4>}
+                    </div>
                   </div>
                 </div>
               </div>
