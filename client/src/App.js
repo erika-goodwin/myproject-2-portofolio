@@ -5,9 +5,11 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import "./css/app.scss";
 import { TopPage } from "./components/TopPage";
+import { Project } from "./components/Project";
 import { ProjectPage } from "./components/ProjectPage";
 import { About } from "./components/About";
 import ContactMe from "./components/ContactMe";
+import ProjectDetailPop from "./components/ProjectDetailPop";
 
 const backgroundChanger = (location) => {
   let backgroundPic;
@@ -31,19 +33,8 @@ const backgroundChanger = (location) => {
 };
 
 export default function App() {
-  const [data, setData] = useState(null);
-
   const [backgroundClass, setBackgroundClass] = useState();
   let location = useLocation();
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/api/projects")
-  //   // fetch(process.env.REACT_APP_API_ENDPOINT + "/api/projects")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.message));
-
-  //   console.log("data from backend:", data);
-  // }, []);
 
   useEffect(() => {
     setBackgroundClass(backgroundChanger(location));
@@ -57,7 +48,11 @@ export default function App() {
           <Route path="/" element={<TopPage />}>
             {/* <Route path='/:id' element={<Modal />} /> */}
           </Route>
-          <Route path="/project" element={<ProjectPage />} />
+          <Route path="/project" element={<Project />}>
+
+            <Route path="" element={<ProjectPage />} />
+            <Route path=":detailId" element={<ProjectDetailPop />} />
+          </Route>
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactMe />} />
         </Routes>

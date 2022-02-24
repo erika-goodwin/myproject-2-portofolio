@@ -1,6 +1,7 @@
 @use "../setting/color" as *;
 @use "../setting/font" as *;
 @use "../setting/mixin" as *;
+@use "../setting/tag" as *;
 
 .project-con {
   height: 92vh;
@@ -28,15 +29,16 @@
       }
 
       &-disc {
-        width: 90%;
-
+        width: 100%;
         display: flex;
+        margin-top: 2rem;
 
         &-con {
           width: 50%;
           height: 2rem;
           @include alignFlexCenter;
           padding-left: 1rem;
+          color: $color-backd;
         }
       }
       &-modal {
@@ -58,21 +60,7 @@
         }
 
         &-tag {
-          padding: 1rem;
-          ul {
-            width: 100%;
-            margin: 0 auto;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            li {
-              list-style-type: none;
-              background-color: $color-backl-8;
-              padding: 0.5rem;
-              border-radius: 0.7rem;
-            }
-          }
+          @include tag();
         }
         &-deslink-con {
           width: 100%;

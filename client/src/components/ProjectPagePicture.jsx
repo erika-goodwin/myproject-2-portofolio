@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ProjectModal from "./ProjectModal";
 
-export const ProjectPagePicture = ({ info, showModal }) => {
-  console.log("selected info in picture conp:", info);
-
+export const ProjectPagePicture = ({ info, showSummary, showModal }) => {
   const [tagStrings, setTagStrings] = useState("");
 
   useEffect(() => {
     // setTagStrings(info.LangTag.join(', '))
     setTagStrings(info.LangTag);
-    console.log("info in pic conpo changed");
   }, [info]);
 
   return (
@@ -20,16 +17,16 @@ export const ProjectPagePicture = ({ info, showModal }) => {
       />
 
       {/* {showSummary && ( */}
-      <div className="project-con-left-comp-disc">
-        <div className="project-con-left-comp-disc-con">
+      <div className="project-con-left-comp-disc ?">
+        <div className="project-con-left-comp-disc-con ?">
           <p>{info.LangTag}</p>
           {/* <p>{tagStrings}</p> */}
         </div>
-        <div className="project-con-left-comp-disc-con">
+        <div className="project-con-left-comp-disc-con ?">
           <p>{info.summary}</p>
         </div>
       </div>
-      {/* )} */}
+      {/* )}  */}
 
       {showModal && <ProjectModal project={info} />}
     </div>

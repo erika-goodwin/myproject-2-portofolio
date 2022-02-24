@@ -3,6 +3,7 @@
 @use "page/nav";
 @use "page/toppage";
 @use "page/projectpage";
+@use "page/projectdetail";
 @use "page/about";
 @use "page/contact";
 
@@ -10,6 +11,10 @@
 @use "setting/font" as *;
 @use "setting/mixin" as *;
 @use "setting/button" as *;
+@use "setting/tag" as *;
+
+//react-image-gallery
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
 
 .\? {
   box-shadow: inset 4px 4px rgb(236, 15, 170), inset -4px -4px rgb(236, 15, 170);
