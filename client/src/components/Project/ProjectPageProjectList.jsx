@@ -5,13 +5,13 @@ export const ProjectPageProjectList = ({
   project,
   onLeave,
   onHover,
-  onClick,
+  // onClick,
 }) => {
-  const [selectedInfo, setSelectedInfo] = useState([]);
+  const [selectedDetail, setSelectedDetail] = useState([]);
 
   const onClickHandler = () => {
     console.log("project link onclick  ", project);
-
+    setSelectedDetail(project)
   };
 
   return (
@@ -19,9 +19,9 @@ export const ProjectPageProjectList = ({
       className="project-con-right-list-each"
       onMouseEnter={() => onHover(project.title)}
       onMouseLeave={() => onLeave()}
-      onClick={() => onClick(project.title)}
+      // onClick={() => onClick(project.title)}
     >
-      <Link to="/project/:detailId" onClick={onClickHandler} project={project}>
+      <Link to="/project/:detailId" onClick={onClickHandler}>
         {project.title}
       </Link>
       <hr />

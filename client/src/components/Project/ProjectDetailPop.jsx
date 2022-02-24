@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
+import ProjectAccordion from "./ProjectAccordion";
 import ProjectImageGallery from "./ProjectImageGallery";
 
-function ProjectDetailPop( project ) {
+function ProjectDetailPop() {
   let { detailId } = useParams();
-  console.log('project data in Deatil pop', project)
 
-  const [toggleActive, setToggleActive] = useState(false);
-
-  const clickAccordion = () => {
-    setToggleActive((pre) => !pre);
-    console.log("toggle changed");
-  };
 
   return (
     <>
@@ -29,6 +23,12 @@ function ProjectDetailPop( project ) {
               <li>
                 <p>tag</p>
               </li>
+              <li>
+                <p>tag</p>
+              </li>
+              <li>
+                <p>tag</p>
+              </li>
               {/* ))} */}
             </ul>
           </div>
@@ -41,14 +41,7 @@ function ProjectDetailPop( project ) {
           </p>
 
           <div className="project-detail-right-accordion">
-            <button class="accordion" onClick={clickAccordion}>
-              Section 1
-            </button>
-            {toggleActive && (
-              <div class="panel">
-                <p>Lorem ipsum...</p>
-              </div>
-            )}
+            <ProjectAccordion />
           </div>
         </div>
       </div>

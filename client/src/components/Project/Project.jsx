@@ -1,12 +1,10 @@
 import React from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
-import { ProjectPage } from "./ProjectPage";
+import { Outlet } from "react-router-dom";
 
 export const Project = () => {
   return (
     <>
       <div className="project-con">
-        {/* <ProjectPage /> */}
         <Outlet />
       </div>
     </>

@@ -45,15 +45,11 @@ p {
   background-color: $color-main;
 }
 .app-con-background-project {
-  @include backgroundImage(
-    url("../image/jess-bailey-rBh0T1QaC1Q-unsplash.jpg")
-  );
+  @include backgroundImage(url("../image/background-project.jpg"));
 }
 .app-con-background-about {
-  @include backgroundImage(url("../image/henry-be-IicyiaPYGGI-unsplash.jpg"));
+  @include backgroundImage(url("../image/background-about.jpg"));
 }
 .app-con-background-contact {
-  @include backgroundImage(
-    url("../image/element5-digital-z6i_UCBuu5Q-unsplash.jpg")
-  );
+  @include backgroundImage(url("../image/background-contact.jpg"));
 }

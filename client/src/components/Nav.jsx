@@ -21,6 +21,10 @@ const settingChanger = (location) => {
       backgroundCol = "nav-con-background-project";
       navHoverCol = "nav-hover-project";
       break;
+    case "/project/:detailId":
+      backgroundCol = "nav-con-background-project";
+      navHoverCol = "nav-hover-project";
+      break;
     case "/about":
       backgroundCol = "nav-con-background-about";
       navHoverCol = "nav-hover-about";

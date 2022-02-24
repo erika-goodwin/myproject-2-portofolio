@@ -5,11 +5,11 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import "./css/app.scss";
 import { TopPage } from "./components/TopPage";
-import { Project } from "./components/Project";
-import { ProjectPage } from "./components/ProjectPage";
+import { Project } from "./components/Project/Project";
+import { ProjectPage } from "./components/Project/ProjectPage";
 import { About } from "./components/About";
 import ContactMe from "./components/ContactMe";
-import ProjectDetailPop from "./components/ProjectDetailPop";
+import ProjectDetailPop from "./components/Project/ProjectDetailPop";
 
 const backgroundChanger = (location) => {
   let backgroundPic;
@@ -45,11 +45,8 @@ export default function App() {
       <div className={`app-con ${backgroundClass}`}>
         <Nav />
         <Routes>
-          <Route path="/" element={<TopPage />}>
-            {/* <Route path='/:id' element={<Modal />} /> */}
-          </Route>
+          <Route path="/" element={<TopPage />} />
           <Route path="/project" element={<Project />}>
-
             <Route path="" element={<ProjectPage />} />
             <Route path=":detailId" element={<ProjectDetailPop />} />
           </Route>

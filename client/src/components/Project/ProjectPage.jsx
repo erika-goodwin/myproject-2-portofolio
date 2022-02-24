@@ -28,12 +28,12 @@ export const ProjectPage = () => {
     setShowModal((pre) => !pre);
   };
 
-  const handleOnClick = (pickedTitle) => {
-    // setShowModal((pre) => !pre);
-    const selectedProject = projectData.find(
-      (project) => (project.title = pickedTitle)
-    );
-  };
+  // const handleOnClick = (pickedTitle) => {
+  //   // setShowModal((pre) => !pre);
+  //   const selectedProject = projectData.find(
+  //     (project) => (project.title = pickedTitle)
+  //   );
+  // };
 
   // useEffect(() => {
   //   console.log("changed selected summary");
@@ -64,7 +64,7 @@ export const ProjectPage = () => {
                 project={project}
                 onHover={showSelectedProject}
                 onLeave={leaveSelectedProject}
-                onClick={handleOnClick}
+                // onClick={handleOnClick}
               />
             );
           })}
