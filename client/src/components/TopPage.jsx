@@ -11,7 +11,7 @@ export const TopPage = () => {
             <MdOutlineLocationOn className="icon " />
             <h5 className="">Vancouver, BC</h5>
           </div>
-          <div className="top-con-left-me">
+          <div className="top-con-left-me ">
             <div className="top-con-left-me-active">
               <h1>Hi, I'm Erika </h1>
               <h2> &#60; Activity looking for a job &#62; </h2>
@@ -37,7 +37,7 @@ export const TopPage = () => {
           </div>
         </div>
 
-        <div className="top-con-right">
+        <div className="top-con-right ">
           <div className="top-con-right-pic">
             <img src={topPic} alt="erika-pic"></img>
           </div>

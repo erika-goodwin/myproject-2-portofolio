@@ -12,7 +12,7 @@ function ProjectDetailPop() {
       .then((res) => res.json())
       .then((res) => {
         console.log("detail res", res);
-        const selectedProject = res.find((project) => (project._id = detailId));
+        const selectedProject = res.find((project) => (project._id === detailId));
         console.log("selectedProject for detail", selectedProject);
         setProjectData(selectedProject);
       })

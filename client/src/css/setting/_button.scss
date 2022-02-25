@@ -12,6 +12,10 @@
   user-select: none;
   -webkit-user-select: none;
 
+  @media (min-width: 769px) and (max-width: 850px) {
+    font-size: 0.9rem;
+  }
+
   margin-right: 2rem;
 
   &:after {
@@ -35,7 +39,8 @@
 }
 
 .btn-top {
-  border: 1px solid $color-backd;
+  border: 1px solid white;
+
   &:after {
     background-color: $color-third;
   }

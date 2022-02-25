@@ -19,11 +19,11 @@ export const ProjectPagePicture = ({ info, showSummary, showModal }) => {
       {/* {showSummary && ( */}
       <div className="project-con-left-comp-disc ?">
         <div className="project-con-left-comp-disc-con ?">
-          <p>{info.LangTag}</p>
+          <p>{info?.LangTag}</p>
           {/* <p>{tagStrings}</p> */}
         </div>
         <div className="project-con-left-comp-disc-con ?">
-          <p>{info.summary}</p>
+          <p>{info?.summary}</p>
         </div>
       </div>
       {/* )}  */}

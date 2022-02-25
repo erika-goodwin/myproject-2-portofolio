@@ -7,11 +7,10 @@ export const ProjectPageProjectList = ({
   onHover,
   // onClick,
 }) => {
-  const [selectedDetail, setSelectedDetail] = useState([]);
-
+  console.log("ProjectList project id", project._id);
   const onClickHandler = () => {
     console.log("project link onclick  ", project);
-    setSelectedDetail(project);
+
   };
 
   return (

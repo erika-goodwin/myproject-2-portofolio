@@ -6,7 +6,7 @@ import { ProjectPageProjectList } from "./ProjectPageProjectList";
 export const ProjectPage = () => {
   const [projectData, setProjectData] = useState([]);
   console.log("projectData", projectData);
-  const [selectedInfo, setSelectedInfo] = useState([projectData[0]]);
+  const [selectedInfo, setSelectedInfo] = useState("");
   console.log("selectedInfo", selectedInfo);
 
   const [showSummary, setShowSummary] = useState(false);
@@ -14,11 +14,13 @@ export const ProjectPage = () => {
 
   const showSelectedProject = (pickedId) => {
     setShowModal((pre) => !pre);
+    console.log("hovered item id: ", pickedId);
     const selectedProject = projectData.find(
-      (project) => (project._id = pickedId)
+      (project) => project._id === pickedId
     );
-    console.log(selectedProject);
-    setSelectedInfo(() => selectedProject);
+    console.log("hovered and selected project", selectedProject);
+    setSelectedInfo(selectedProject);
+    console.log("did set the selectedInfo", selectedInfo);
   };
 
   const leaveSelectedProject = () => {
@@ -34,6 +36,11 @@ export const ProjectPage = () => {
       // .then((res) => dispatch(res))
       .catch((err) => console.log("err", err));
   }, []);
+
+  useEffect(() => {
+    console.log("setSelected updated, selectedInfO:", selectedInfo);
+    console.log("setSelected updated, projectData:", projectData);
+  }, [selectedInfo]);
 
   return (
     <>
