@@ -13,20 +13,21 @@ import pic3 from "../../image/projectlist-image/nodeblogapp-pic3.png";
 const ProjectImageGallery = ({ imageData }) => {
   console.log("imageData", imageData);
 
-  const images = [
-    {
-      original: pic1,
-      thumbnail: pic1,
-    },
-    {
-      original: pic2,
-      thumbnail: pic2,
-    },
-    {
-      original: pic3,
-      thumbnail: pic3,
-    },
-  ];
+  const images = imageData;
+  // const images = [
+  //   {
+  //     original: "/projectlist-image/nodeblogapp-pic1.png",
+  //     thumbnail: pic1,
+  //   },
+  //   {
+  //     original: pic2,
+  //     thumbnail: pic2,
+  //   },
+  //   {
+  //     original: pic3,
+  //     thumbnail: pic3,
+  //   },
+  // ];
   console.log("images", images);
 
   return <ImageGallery items={images} />;
