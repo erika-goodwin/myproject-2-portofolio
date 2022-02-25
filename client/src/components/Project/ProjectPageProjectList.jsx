@@ -11,17 +11,17 @@ export const ProjectPageProjectList = ({
 
   const onClickHandler = () => {
     console.log("project link onclick  ", project);
-    setSelectedDetail(project)
+    setSelectedDetail(project);
   };
 
   return (
     <div
       className="project-con-right-list-each"
-      onMouseEnter={() => onHover(project.title)}
+      onMouseEnter={() => onHover(project._id)}
       onMouseLeave={() => onLeave()}
-      // onClick={() => onClick(project.title)}
+      // onClick={() => onClick(project._id)}
     >
-      <Link to="/project/:detailId" onClick={onClickHandler}>
+      <Link to={`/project/${project._id}`} onClick={onClickHandler}>
         {project.title}
       </Link>
       <hr />

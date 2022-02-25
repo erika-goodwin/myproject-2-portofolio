@@ -1,6 +1,23 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const imageSchema = new Schema({
+  original: { type: String, trim: true, required: true },
+  thumbnail: { type: String, trim: true, required: true },
+});
+
+const bulletPointSchema = new Schema({
+  header: {
+    type: String,
+    trim: true,
+    required: true,
+  },
+  content: {
+    type: String,
+    trim: true,
+    required: true,
+  },
+});
 const projectListSchema = new Schema(
   {
     title: {
@@ -37,6 +54,8 @@ const projectListSchema = new Schema(
       required: true,
       minlength: 10,
     },
+    image: [imageSchema],
+    bulletPoint: [bulletPointSchema],
   },
   {
     timestamps: true,

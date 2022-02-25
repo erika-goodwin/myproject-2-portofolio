@@ -6,26 +6,6 @@ import { useRef } from "react/cjs/react.production.min";
 const ProjectModal = ({ project, setShowModal }) => {
   const tag = project.LangTag;
 
-  // const ref = useRef();
-  // useEffect(() => {
-  //   // add when mounted
-  //   document.addEventListener("mousedown", handleClick);
-  //   // return function to be called when unmounted
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClick);
-  //   };
-  // }, []);
-
-  // const handleClick = e => {
-  //   if (ref.current.contains(e.target)) {
-  //     // inside click
-  //     return;
-  //   }
-  //   // outside click
-  //   setShowModal((pre) => !pre);
-
-  // };
-
   return (
     // <div className="project-con-left-comp-modal " ref={ref}>
     <div className="project-con-left-comp-modal ">
@@ -33,7 +13,7 @@ const ProjectModal = ({ project, setShowModal }) => {
       <h4>{project.summary}</h4>
       <div className="project-con-left-comp-modal-tag ">
         <ul>
-          {tag.map((tag) => (
+          {tag?.map((tag) => (
             <li>
               <p>{tag}</p>
             </li>

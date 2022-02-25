@@ -15,12 +15,16 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   console.log("post post post...");
 
-  const title = req.body.title;
-  const LangTag = req.body.LangTag;
-  const deployedUrl = req.body.deployedUrl;
-  const githubUrl = req.body.githubUrl;
-  const summary = req.body.summary;
-  const description = req.body.description;
+  const {
+    title,
+    LangTag,
+    deployedUrl,
+    githubUrl,
+    summary,
+    description,
+    image,
+    bulletPoint,
+  } = req.body;
 
   const newProject = new Project({
     title,
@@ -29,16 +33,18 @@ router.post("/", (req, res) => {
     githubUrl,
     summary,
     description,
-    LangTag,
+    image,
+    bulletPoint,
   });
+
   newProject
     .save()
     .then((project) => {
       console.log(project);
     })
-    .catch((err) => res.status(400).json("Error: ", err));
+    .catch((err) => res.status(400).json(err));
 
-  res.redirect("/");
+  // res.redirect("/");
 });
 
 router.get("/:id", (req, res) => {

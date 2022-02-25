@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-function ProjectAccordion() {
+import React, { useState } from "react";
+
+function ProjectAccordion({ bulletPoint }) {
   const [toggleActive, setToggleActive] = useState(false);
 
   const clickAccordion = () => {
     setToggleActive((pre) => !pre);
-    console.log("toggle changed");
   };
 
   return (
     <>
       <div className="project-detail-right-accordion-indi">
         <button className="accordion" onClick={clickAccordion}>
-          Section2
+          {bulletPoint.header}
         </button>
         {toggleActive && (
-          <div class="panel">
-            <p>Lorem ipsum...</p>
+          <div className="panel">
+            <p>{bulletPoint.content}</p>
           </div>
         )}
       </div>

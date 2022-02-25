@@ -1,47 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProjectAccordion from "./ProjectAccordion";
 import ProjectImageGallery from "./ProjectImageGallery";
 
 function ProjectDetailPop() {
   let { detailId } = useParams();
+  const [projectData, setProjectData] = useState([]);
 
+  useEffect(() => {
+    fetch("http://localhost:3001/api/projects")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log("detail res", res);
+        const selectedProject = res.find((project) => (project._id = detailId));
+        console.log("selectedProject for detail", selectedProject);
+        setProjectData(selectedProject);
+      })
+      // .then((res) => dispatch(res))
+      .catch((err) => console.log("err", err));
+  }, []);
 
   return (
     <>
       <div className="project-detail ">
         <div className="project-detail-left ">
-          <ProjectImageGallery />
+          <ProjectImageGallery imageData={projectData.image} />
         </div>
         <div className="project-detail-right ">
-          <h1>Title</h1>
-          <h4>summary summary symmary</h4>
+          <h1>{projectData.title}</h1>
+          <h4>{projectData.summary}</h4>
 
           <div className="project-detail-right-tag ">
             <ul>
-              {/* {tag.map((tag) => ( */}
-              <li>
-                <p>tag</p>
-              </li>
-              <li>
-                <p>tag</p>
-              </li>
-              <li>
-                <p>tag</p>
-              </li>
-              {/* ))} */}
+              {projectData?.LangTag?.map((tag) => (
+                <li>
+                  <p>{tag}</p>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <p>
-            detail discription Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Harum pariatur commodi atque rerum ex error odio
-            accusamus laboriosam esse excepturi quaerat delectus, quam ratione
-            iste possimus voluptatem. Est, nihil velit.
-          </p>
+          <p>{projectData.description}</p>
 
           <div className="project-detail-right-accordion">
-            <ProjectAccordion />
+            {projectData?.bulletPoint?.map((point) => (
+              <ProjectAccordion
+                bulletPoint={point}
+                key={projectData.bulletPoint._id}
+              />
+            ))}
+            {/* <ProjectAccordion /> */}
           </div>
         </div>
       </div>
