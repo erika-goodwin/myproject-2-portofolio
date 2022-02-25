@@ -6,9 +6,9 @@ const nodemailer = require("nodemailer");
 const sendEmail = async (name, email, subject, message) => {
   // create reusable transporter object using the default SMTP transport
 
-  console.log(process.env.EMAIL_USERNAME);
-  console.log(process.env.EMAIL_PASSWORD);
-  console.log(process.env.EMAIL_BCC);
+  console.log("Email Username", process.env.EMAIL_USERNAME);
+  console.log("Email Password", process.env.EMAIL_PASSWORD);
+  console.log("Email BCC", process.env.EMAIL_BCC);
 
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
@@ -45,8 +45,10 @@ const sendEmail = async (name, email, subject, message) => {
     transporter.sendMail(options(), (error, info) => {
       if (error) {
         reject(error);
+        console.log("fail... ", error);
       } else {
         resolve(true);
+        console.log("All done send");
       }
     });
   });

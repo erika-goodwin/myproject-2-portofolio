@@ -56,4 +56,20 @@ p {
 }
 .app-con-background-contact {
   @include backgroundImage(url("../image/background-contact.jpg"));
+
+  @media (max-width: 900px) {
+    background-position: right 0;
+  }
+  @media (max-width: 580px) {
+    height: 120vh;
+  }
+  @media (max-width: 564px) {
+    height: 125vh;
+  }
+  @media (max-width: 435px) {
+    height: 130vh;
+  }
+  @media (max-width: 323px) {
+    height: 137vh;
+  }
 }
