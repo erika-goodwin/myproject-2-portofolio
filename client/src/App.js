@@ -11,6 +11,7 @@ import { About } from "./components/About";
 import ContactMe from "./components/ContactMe";
 import ProjectDetailPop from "./components/Project/ProjectDetailPop";
 
+
 const backgroundChanger = (location) => {
   let backgroundPic;
   switch (location.pathname) {
@@ -43,6 +44,7 @@ export default function App() {
   return (
     <>
       <div className={`app-con ${backgroundClass}`}>
+  
         <Nav />
         <Routes>
           <Route path="/" element={<TopPage />} />

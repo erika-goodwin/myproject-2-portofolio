@@ -14,17 +14,17 @@
   "description": "This is the node application with express for blog. For client side is made with React.js and Redux. The database is Mongodb with Mongoose.",
   "image": [
     {
-      "original": "pic1",
-      "thumbnail": "pic1"
+      "original": "/projectlist-image/nodeblogapp-pic1.png",
+      "thumbnail": "/projectlist-image/nodeblogapp-pic1.png",
     },
     {
-      "original": "pic2",
-      "thumbnail": "pic2"
+      "original": "/projectlist-image/nodeblogapp-pic2.png",
+      "thumbnail": "/projectlist-image/nodeblogapp-pic2.png",
     },
     {
-      "original": "pic3",
-      "thumbnail": "pic3"
-    }
+      "original": "/projectlist-image/nodeblogapp-pic3.png",
+      "thumbnail": "/projectlist-image/nodeblogapp-pic3.png",
+    },
   ],
   "bulletPoint": [
     {
@@ -58,16 +58,12 @@
   "description": "This is the react application to check the weather. You can also check the local time of the city. The weather data is fetched from Weather API - OpenWeatherMap.",
   "image": [
     {
-      "original": "pic4",
-      "thumbnail": "pic4"
+      "original": "/projectlist-image/nodeblogapp-pic3.png",
+      "thumbnail": "/projectlist-image/nodeblogapp-pic3.png"
     },
     {
-      "original": "pic5",
-      "thumbnail": "pic5"
-    },
-    {
-      "original": "pic6",
-      "thumbnail": "pic6"
+      "original": "/projectlist-image/nodeblogapp-pic4.png",
+      "thumbnail": "/projectlist-image/nodeblogapp-pic4.png"
     }
   ],
   "bulletPoint": [

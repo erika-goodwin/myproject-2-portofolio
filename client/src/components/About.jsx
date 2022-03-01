@@ -16,33 +16,10 @@ import topPic from "../image/top-me-pic.jpg";
 export const About = () => {
   return (
     <>
-      <div className="about-con">
+      <div className="about-con ">
         <div className="about-con-top ">
           <div className="about-con-top-resume ">
-            <a
-              href="https://drive.google.com/file/d/1As09ypqr_i5yOXXM-hAthQHbk1uJnHD4/view?usp=sharing"
-              target="_blank"
-              rel="noreferrer"
-              alt="resume"
-              className="btn-resume btn"
-            >
-              Resume
-            </a>
-          </div>
-        </div>
-
-        <div className="about-con-below">
-          <div className="about-con-below-pic ">
-            <a href="#" className="photo">
-              <h2>
-                Erika <br /> Hashizume
-              </h2>
-              <img src={topPic} alt="erika-pic" className="?" />
-              <div className="glow-wrap ">
-                <i className="glow"></i>
-              </div>
-            </a>
-            {/* <ul className="?">
+            <ul className="about-con-top-resume-linkCont ">
               <li>
                 <a
                   href="https://www.linkedin.com/in/erika-hashizume-37295a153/"
@@ -63,10 +40,39 @@ export const About = () => {
                   <BsGithub className="sns-icon github" />
                 </a>
               </li>
-            </ul> */}
+            </ul>
+            <div className="about-con-top-resume-resumelink">
+              <a
+                href="https://drive.google.com/file/d/1As09ypqr_i5yOXXM-hAthQHbk1uJnHD4/viewusp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                alt="resume"
+                className="btn-resume btn"
+              >
+                Resume
+              </a>
+            </div>
           </div>
-          <div className="about-con-below-des">
-            <div className="about-con-below-des-summary">
+        </div>
+
+        <div className="about-con-below ">
+          <div className="about-con-below-pic ">
+            <div className="about-con-below-pic-absolute ">
+              <div className="about-con-below-pic-absolute-picCont ">
+                <a href="#" className="photo ">
+                  <h2>
+                    Erika <br /> Hashizume
+                  </h2>
+                  <img src={topPic} alt="erika-pic" className="" />
+                  <div className="glow-wrap ">
+                    <i className="glow"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="about-con-below-des ">
+            <div className="about-con-below-des-summary ">
               <h4>
                 I am a Full-stack web developer with experience in HTML/CSS and
                 Javascript, currently in the process of completing my diploma.
@@ -76,7 +82,7 @@ export const About = () => {
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum
                 officiis deleniti ratione cupiditate vitae asperiores nulla
                 earum numquam facere exercitationem repudiandae, natus dolorum.
-                Nulla minima quis voluptas dolorem aliquid? Architecto. Ea,
+                Nulla minima quis voluptas dolorem aliquid Architecto. Ea,
                 repudiandae temporibus consectetur possimus quis asperiores
                 distinctio accusantium aliquid incidunt libero cumque maxime.
                 Eveniet autem quo consectetur! Recusandae, delectus! Magnam,
@@ -84,32 +90,39 @@ export const About = () => {
                 Dolorum, harum aperiam aliquam doloribus consequatur, inventore
                 modi odit officiis eum sunt expedita eaque. Impedit, facilis
                 fugit rerum doloribus ipsam provident culpa nemo labore nobis,
-                et optio? Tempore, voluptas minus?
+                et optio Tempore, voluptas minus
               </p>
             </div>
-            <div className="about-con-below-des-skill">
+            <div className="about-con-below-des-skill ">
               <h3>Technical Skill</h3>
-              <div className="about-con-below-des-skill-con">
-                <div className="Lang skill-logo">
-                  <h4>Language</h4>
-                  <ImHtmlFive className="logo ImHtmlFive" />
-                  <ImCss3 className="logo ImCss3" />
-                  <SiJavascript className="logo SiJavascript" />
-                  <SiReact className="logo SiReact" />
-                  <FaNodeJs className="logo FaNodeJs" />
+              <div className="about-con-below-des-skill-con ">
+                <div className="about-con-below-des-skill-con-con1">
+                  <div className="Lang skill-logo">
+                    <h4>Language</h4>
+                    <div className="logoflexbox">
+                      <ImHtmlFive className="logo ImHtmlFive" />
+                      <ImCss3 className="logo ImCss3" />
+                      <SiJavascript className="logo SiJavascript" />
+                      <SiReact className="logo SiReact" />
+                      <FaNodeJs className="logo FaNodeJs" />
+                    </div>
+                  </div>
                 </div>
-
-                <div className="frame skill-logo">
-                  <h4>Frameworks/Libraries</h4>
-                  <IoLogoSass className="logo IoLogoSass" />
-                  <SiTailwindcss className="logo SiTailwindcss" />
-                  <SiBootstrap className="logo SiBootstrap" />
-                  <SiRedux className="logo SiRedux" />
-                  <SiExpress className="logo SiExpress" />
+                <div className="about-con-below-des-skill-con-con2">
+                  <div className="frame skill-logo">
+                    <h4>Frameworks / Libraries</h4>
+                    <div className="logoflexbox">
+                      <IoLogoSass className="logo IoLogoSass" />
+                      <SiTailwindcss className="logo SiTailwindcss" />
+                      <SiBootstrap className="logo SiBootstrap" />
+                      <SiRedux className="logo SiRedux" />
+                      <SiExpress className="logo SiExpress" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="about-con-below-des-education">
+            <div className="about-con-below-des-education ">
               <h3>Education/Experience</h3>
               <div className="about-con-below-des-education-con">
                 <div className="grid">

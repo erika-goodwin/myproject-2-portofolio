@@ -1,8 +1,8 @@
 import React from "react";
 import ImageGallery from "react-image-gallery";
-import pic1 from "../../image/projectlist-image/nodeblogapp-pic1.png";
-import pic2 from "../../image/projectlist-image/nodeblogapp-pic2.png";
-import pic3 from "../../image/projectlist-image/nodeblogapp-pic3.png";
+// import pic1 from "../../image/projectlist-image/nodeblogapp-pic1.png";
+// import pic2 from "../../image/projectlist-image/nodeblogapp-pic2.png";
+// import pic3 from "../../image/projectlist-image/nodeblogapp-pic3.png";
 // import pic4 from "../../image/projectlist-image/nodeblogapp-pic4.png";
 // import pic5 from "../../image/projectlist-image/nodeblogapp-pic5.png";
 // import pic6 from "../../image/projectlist-image/nodeblogapp-pic6.png";
@@ -12,20 +12,34 @@ import pic3 from "../../image/projectlist-image/nodeblogapp-pic3.png";
 
 const ProjectImageGallery = ({ imageData }) => {
   console.log("imageData", imageData);
+  console.log("imageData[0]", imageData[0]);
 
+  // const images = imageData;
   const images = [
     {
-      original: pic1,
-      thumbnail: pic1,
+      original: "pic1",
+      thumbnail: "pic1",
     },
     {
-      original: pic2,
-      thumbnail: pic2,
+      original: "pic2",
+      thumbnail: "pic2",
     },
     {
-      original: pic3,
-      thumbnail: pic3,
+      original: "pic3",
+      thumbnail: "pic3",
     },
+    // {
+    //   original: "imageData",
+    //   thumbnail: "/projectlist-image/nodeblogapp-pic1.png",
+    // },
+    // {
+    //   original: "/projectlist-image/nodeblogapp-pic2.png",
+    //   thumbnail: "/projectlist-image/nodeblogapp-pic2.png",
+    // },
+    // {
+    //   original: "/projectlist-image/nodeblogapp-pic3.png",
+    //   thumbnail: "/projectlist-image/nodeblogapp-pic3.png",
+    // },
   ];
   console.log("images", images);
 
