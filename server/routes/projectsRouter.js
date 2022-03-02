@@ -4,8 +4,6 @@ const router = express.Router();
 let Project = require("../models/project.model");
 
 router.get("/", (req, res) => {
-  // res.send("hello world");
-  //   res.json({ message: "Hello from server!" });
   console.log("get get get");
   Project.find()
     .then((projects) => res.json(projects))

@@ -43,7 +43,7 @@ const settingChanger = (location) => {
 };
 
 const bugerOpener = (open) => {
-  console.log("bugerOpener / open", open);
+
   return open ? "translateXOpen" : "translateXClose";
 };
 

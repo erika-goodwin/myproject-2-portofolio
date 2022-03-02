@@ -12,12 +12,15 @@ import {
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import topPic from "../image/top-me-pic.jpg";
+import useWindowSize from "../tool/useWindowSize";
 
 export const About = () => {
+  const windowSize = useWindowSize();
   return (
     <>
       <div className="about-con ">
         <div className="about-con-top ">
+            {windowSize.width < 768 && <h1>Erika Hashizume</h1>}
           <div className="about-con-top-resume ">
             <ul className="about-con-top-resume-linkCont ">
               <li>
@@ -71,7 +74,7 @@ export const About = () => {
               </div>
             </div>
           </div>
-          <div className="about-con-below-des ">
+          <div className="about-con-below-des">
             <div className="about-con-below-des-summary ">
               <h4>
                 I am a Full-stack web developer with experience in HTML/CSS and

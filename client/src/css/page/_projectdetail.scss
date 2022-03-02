@@ -20,14 +20,56 @@
   &-right {
     width: 40%;
     padding: 5rem 5rem 5rem 2rem;
-    h1 {
-      font-family: $font-title;
-    }
-    h1:after {
-      content: "";
-      display: block;
-      border-bottom: $color-backd 0.1rem solid;
-      width: 4rem;
+
+    &-titleLink {
+      width: 100%;
+
+      display: flex;
+      flex-direction: row;
+
+      h1 {
+        font-family: $font-title;
+        width: 75%;
+      }
+      h1:after {
+        content: "";
+        display: block;
+        border-bottom: $color-backd 0.1rem solid;
+        width: 4rem;
+      }
+
+      &-link {
+        width: 25%;
+        @include flexColCenter;
+
+        ul {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+
+          li {
+            list-style-type: none;
+
+            a {
+              text-decoration: none;
+
+              .sns-icon {
+                font-size: 2.5rem;
+                text-decoration: none;
+              }
+              .earth {
+                color: #72b3d6;
+              }
+              .github {
+                color: #171515;
+              }
+            }
+          }
+        }
+      }
     }
 
     &-tag {
@@ -38,7 +80,6 @@
     &-accordion {
       padding-top: 3rem;
 
-      /* Style the buttons that are used to open and close the accordion panel */
       .accordion {
         background-color: #eee;
         color: #444;
@@ -51,7 +92,6 @@
         transition: 0.4s;
       }
 
-      /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
       .active,
       .accordion:hover {
         background-color: #ccc;
@@ -76,6 +116,245 @@
         // max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease-out;
+      }
+    }
+  }
+}
+
+/* Normal */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .project-detail {
+    &-left {
+      padding: 5rem 1rem 5rem 3rem;
+    }
+
+    &-right {
+      padding: 5rem 1.5rem 5rem 1rem;
+
+      &-titleLink {
+        width: 100%;
+
+        h1 {
+          font-size: 2rem;
+          @media (min-width: 769px) and (max-width: 1000px) {
+            font-size: 1.5rem;
+          }
+        }
+        h1:after {
+        }
+
+        &-link {
+          width: 25%;
+          ul {
+            li {
+              a {
+                .sns-icon {
+                  @media (min-width: 769px) and (max-width: 1000px) {
+                    font-size: 2rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      h4 {
+        font-size: 1.3rem;
+        @media (min-width: 769px) and (max-width: 1000px) {
+          font-size: 1rem;
+        }
+      }
+
+      &-tag {
+        margin: 1rem auto;
+        @include tag();
+      }
+
+      p {
+        font-size: 1rem;
+        @media (min-width: 769px) and (max-width: 1000px) {
+          font-size: 0.8rem;
+        }
+      }
+
+      &-accordion {
+        padding-top: 3rem;
+
+        .accordion {
+          p {
+            font-size: 1rem;
+            @media (min-width: 769px) and (max-width: 1000px) {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  .project-detail {
+    height: auto;
+
+    &-right {
+      width: 100%;
+      padding: 2rem 1.5rem 0 1rem;
+
+      &-titleLink {
+        width: 100%;
+
+        h1 {
+        }
+        h1:after {
+        }
+
+        &-link {
+          width: 25%;
+
+          ul {
+            li {
+              a {
+                .sns-icon {
+                  // font-size: 2.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &-tag {
+        margin: 1rem auto;
+        @include tag();
+      }
+
+      &-desc {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      &-img {
+        width: 70%;
+        margin: 1rem auto;
+      }
+
+      &-accordion {
+        padding-top: 1.5rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+
+/* Smartphone L */
+@media (min-width: 376px) and (max-width: 500px) {
+  .project-detail {
+    height: auto;
+
+    &-right {
+      padding: 2rem 1rem 0 1rem;
+
+      &-titleLink {
+        h1 {
+          font-size: 1.5rem;
+        }
+        h1:after {
+        }
+
+        &-link {
+          width: 25%;
+
+          ul {
+            li {
+              a {
+                .sns-icon {
+                  font-size: 2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      h4 {
+        font-size: 1.1rem;
+      }
+
+      &-tag {
+        margin: 1rem auto;
+        @include tag();
+      }
+
+      &-desc {
+        width: 95%;
+        margin: 0 auto;
+      }
+
+      &-img {
+        width: 90%;
+        margin: 1rem auto;
+      }
+
+      &-accordion {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+
+/* Smartphone S_M */
+@media (max-width: 375px) {
+  .project-detail {
+    height: auto;
+
+    &-right {
+      padding: 2rem 1rem 0 1rem;
+
+      &-titleLink {
+        h1 {
+          font-size: 1.5rem;
+        }
+        h1:after {
+        }
+
+        &-link {
+          width: 25%;
+
+          ul {
+            li {
+              a {
+                .sns-icon {
+                  font-size: 2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      h4 {
+        font-size: 1.1rem;
+      }
+
+      &-tag {
+        margin: 1rem auto;
+        @include tag();
+      }
+
+      &-desc {
+        width: 95%;
+        margin: 0 auto;
+      }
+
+      &-img {
+        width: 90%;
+        margin: 1rem auto;
+      }
+
+      &-accordion {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
       }
     }
   }

@@ -24,30 +24,7 @@ const ProjectModal = ({ project, setShowModal }) => {
         <p className="project-con-left-comp-modal-deslink-con-description ">
           {project.description}
         </p>
-        <div className="project-con-left-comp-modal-deslink-con-link ">
-          <ul>
-            <li>
-              <a
-                href={project.deployedUrl}
-                target="_blank"
-                rel="noreferrer"
-                alt="homepage"
-              >
-                <ImEarth className="sns-icon earth" />
-              </a>
-            </li>
-            <li>
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                alt="GitHub"
-              >
-                <BsGithub className="sns-icon github" />
-              </a>
-            </li>
-          </ul>
-        </div>
+
       </div>
     </div>
   );

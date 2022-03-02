@@ -23,7 +23,6 @@ function ContactMe() {
     setIsLoading(true);
 
     const mailData = { name, email, subject, message };
-    console.log("email data: ", mailData);
 
     await axios
       .post("http://localhost:3001/api/contact/send", mailData)

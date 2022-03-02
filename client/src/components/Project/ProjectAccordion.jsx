@@ -10,7 +10,7 @@ function ProjectAccordion({ bulletPoint }) {
   return (
     <>
       <div className="project-detail-right-accordion-indi">
-        <button className="accordion" onClick={clickAccordion}>
+        <button className={toggleActive ? "accordion active" : "accordion"} onClick={clickAccordion}>
           {bulletPoint.header}
         </button>
         {toggleActive && (

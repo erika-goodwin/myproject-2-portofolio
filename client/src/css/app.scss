@@ -48,6 +48,8 @@ p {
   // height: 100%;
   position: fixed;
   z-index: -1;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .app-con-background-top {
@@ -67,6 +69,7 @@ p {
 }
 .app-con-background-project {
   @include backgroundImage(url("../image/background-project.jpg"));
+  background-position: right 0 bottom 0;
 }
 .app-con-background-about {
   @include backgroundImage(url("../image/background-about.jpg"));
@@ -74,19 +77,19 @@ p {
 .app-con-background-contact {
   @include backgroundImage(url("../image/background-contact.jpg"));
 
-  @media (max-width: 900px) {
-    background-position: right 0;
-  }
-  @media (max-width: 580px) {
-    height: 120vh;
-  }
-  @media (max-width: 564px) {
-    height: 125vh;
-  }
-  @media (max-width: 435px) {
-    height: 130vh;
-  }
-  @media (max-width: 323px) {
-    height: 137vh;
-  }
+  // @media (max-width: 900px) {
+  //   background-position: right 0;
+  // }
+  // @media (max-width: 580px) {
+  //   height: 120vh;
+  // }
+  // @media (max-width: 564px) {
+  //   height: 125vh;
+  // }
+  // @media (max-width: 435px) {
+  //   height: 130vh;
+  // }
+  // @media (max-width: 323px) {
+  //   height: 137vh;
+  // }
 }

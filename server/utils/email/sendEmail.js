@@ -1,8 +1,6 @@
 require("dotenv").config();
 const nodemailer = require("nodemailer");
 
-// const res = require("express/lib/response");
-
 const sendEmail = async (name, email, subject, message) => {
   // create reusable transporter object using the default SMTP transport
 

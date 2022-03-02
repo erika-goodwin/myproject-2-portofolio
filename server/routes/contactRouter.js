@@ -9,7 +9,6 @@ router.get("/", (req, res) => {
 
 router.post("/send", async(req, res) => {
   console.log("Contact Form POST(send)");
-  //   let data = req.body.mailData;
   let { name, email, subject, message } = req.body;
 
   console.log("mail name:", name);
